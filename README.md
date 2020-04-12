@@ -9,7 +9,7 @@ Click on the green "Clone or Download Repository" and choose to download as a ZI
 
 ### Using Git
 
-This option is for people who want to contribute to the development of the application or for people who prefer the command line.
+This option is for people who want to contribute to the development of the application or for people who prefer to download from the command line.
 
 Open a Git terminal or from your computer's terminal.
 
