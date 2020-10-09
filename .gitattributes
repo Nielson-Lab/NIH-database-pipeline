@@ -1,2 +1,5 @@
 *.exe filter=lfs diff=lfs merge=lfs -text
 Windows_app_updates/NFP.exe filter=lfs diff=lfs merge=lfs -text
+Windows_app_updates/Inputs filter=lfs diff=lfs merge=lfs -text
+Windows_app_updates/Instructions.md filter=lfs diff=lfs merge=lfs -text
+Windows_app_updates/Outputs filter=lfs diff=lfs merge=lfs -text

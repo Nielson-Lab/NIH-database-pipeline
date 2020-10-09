@@ -1,0 +1,9 @@
+GUID,AgeYrs,DaysSinceBaseline,WAISSymbolTotRawScr,WAISSymbolIncorrect,WAISProcessSpdIndxPercntRank
+AA,69,180,0.23,1,nan
+BB,32,180,0.46,nan,2.34
+CC,33,180,0.37,0,4.56
+DD,65,180,0.87,1,nan
+EE,46,180,0.64,0,9.83
+FF,21,180,0.78,1,5.74
+GG,57,180,0.51,0,6.35
+HH,58,180,0.47,1,3.37
