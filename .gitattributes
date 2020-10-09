@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 *.exe filter=lfs diff=lfs merge=lfs -text
 Windows_app_updates/NFP.exe filter=lfs diff=lfs merge=lfs -text
 Windows_app_updates/Inputs filter=lfs diff=lfs merge=lfs -text
 Windows_app_updates/Instructions.md filter=lfs diff=lfs merge=lfs -text
 Windows_app_updates/Outputs filter=lfs diff=lfs merge=lfs -text
+=======
+MacOS_app/NFP filter=lfs diff=lfs merge=lfs -text
+MacOS_app_updates/Inputs filter=lfs diff=lfs merge=lfs -text
+MacOS_app_updates/Instructions.md filter=lfs diff=lfs merge=lfs -text
+MacOS_app_updates/NFP filter=lfs diff=lfs merge=lfs -text
+MacOS_app_updates/Outputs filter=lfs diff=lfs merge=lfs -text
+>>>>>>> 68e78dea361f0f069dc6faf0ceffa650c4e03344
