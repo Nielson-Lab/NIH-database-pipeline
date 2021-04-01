@@ -3,6 +3,7 @@
 What versions of software are you using?
 ----------------------------------------
 **Operating System:** …
+**Application Release** ...
 
 
 What are the steps to reproduce this issue?
