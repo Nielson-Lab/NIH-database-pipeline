@@ -1,4 +1,6 @@
 # NIH-database-pipeline
+To see updated Releases, see the Releases section on the right hand side of the page.
+
 Data processing and merge pipeline for NIH databases
 
 Because the application is a large binary file, we have compressed the folder the application resides in and are sharing it as a Release. This process will also keep users updated about changes to the application throughout the various stages. 
