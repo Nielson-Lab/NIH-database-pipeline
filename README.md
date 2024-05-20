@@ -1,4 +1,8 @@
 # NIH-database-pipeline
+This repository was developed with funding from the National Institute of Mental Health (NIMH), grant # 1R01MH116156-01A1 awarded to Dr. Jessica L. Nielson, PhD at the University of Minnesota. ©2024 Regents of the University of Minnesota. All rights reserved.
+
+This database is open source and available under Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND): https://creativecommons.org/licenses/by-nc-nd/4.0/
+
 To see updated Releases, see the Releases section on the right hand side of the page.
 
 Data processing and merge pipeline for NIH databases
