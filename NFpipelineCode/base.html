@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- This repository was developed with funding from the National Institute of Mental Health (NIMH),
+grant # 1R01MH116156 awarded to Dr. Jessica L. Nielson, PhD at the University of Minnesota.
+©2024 Regents of the University of Minnesota. All rights reserved.
+
+This repository is open source and available under Attribution-NonCommercial-NoDerivatives (CC BY-NC-SA):
+(https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) -->
+<html>
+
+<head>
+  <link rel="stylesheet" href=" {{ url_for('static', filename='styles/StyleSheet.css')}}" type="text/css">
+</head>
+
+<body>
+
+<br>
+<center>
+  Welcome to the NDA-FITBIR Pipeline application! Here you can process, visualize, merge, and tranform your NDA and FITBIR datasets!
+</center>
+<br>
+<center>
+  Please choose one of the following options to get started.
+</center>
+<br>
+<center>
+  <form action="" method="POST">
+    {{  form.nda  }}
+  </form>
+</center>
+<br>
+<center>
+  <form action="" method="POST">
+    {{ form.fitbir  }}
+  </form>
+</center>
+<br>
+<center>
+<form action="" method = "POST">
+  {{  form.pn  }}
+</form>
+</center>
+<br>
+<center>
+  <form action="" method = "POST">
+    {{  form.pf  }}
+  </form>
+</center>
+<br>
+<center>
+  <form action="" method="POST">
+    {{ form.preview  }}
+  </form>
+</center>
+<br>
+<center>
+  <form action="" method="POST">
+  {{ form.mt  }}
+  </form>
+</center>
+<br>
+<center>
+  <form action="" method="POST">
+    {{  form.merge  }}
+  </form>
+</center>
+<br>
+<center>
+  <form action="" method="POST">
+    {{  form.transform  }}
+  </form>
+</center>
+<br>
+<center>
+  <form action="" method="POST">
+    {{ form.stats  }}
+  </form>
+</center>
+
+<br>
+<!-- <center>
+  <form action="" method="POST">
+    {{ form.shutdown  }}
+  </form>
+</center> -->
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- This repository was developed with funding from the National Institute of Mental Health (NIMH),
+grant # 1R01MH116156 awarded to Dr. Jessica L. Nielson, PhD at the University of Minnesota.
+©2024 Regents of the University of Minnesota. All rights reserved.
+
+This repository is open source and available under Attribution-NonCommercial-NoDerivatives (CC BY-NC-SA):
+(https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) -->
+<html>
+  <head>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='styles/StyleSheet.css')}}" type="text/css">
+  </head>
+  <style>
+    body {
+      background-color:var(--color-3);
+      color: black;
+    }
+  </style>
+<body>
+
+
+<H1> Preprocess FITBIR Datasets </H1>
+<form action="http://localhost:5271">
+  <input type="submit" value="Home">
+</form>
+
+<form action="" method="POST">
+  <div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
+      Do you want to split all the columns?
+
+      {% for subfield in form.splitall %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+      {% endfor %}
+
+
+      <br><br>
+
+      Do you want to split some columns?
+
+      {% for subfield in form.splitcols %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+      {% endfor %}
+
+      <br><br>
+
+      Please list the columns you want to split. Separate each column with a ';'
+      {{  form.cols_to_split  }}
+      <br><br>
+
+      How many parts of the split column names do you wish to keep (1 means the last part will be kept, 2 means the last 2, etc.)?
+
+      {{  form.num_suffixes  }}
+
+      <br><br>
+
+      Do you wish to drop certain columns?
+
+      {% for subfield in form.remove %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+      {% endfor %}
+
+
+      <br><br>
+
+      Which columns do you want to drop? Please separate columns with a ';' :
+
+      {{  form.drop_cols  }}
+
+      <br><br>
+
+      Do you want to remove empty columns?
+
+      {% for subfield in form.drop_na_cols %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+      {% endfor %}
+
+      <br><br>
+
+      Do you want to scale the columns so that the values match the scale in NDA?
+      {% for subfield in form.scale_cols %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+      {% endfor %}
+      <br><br>
+      Do you want to rename the columns to match NDA column names?
+      {% for subfield in form.change_cols %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+      {% endfor %}
+
+      <br><br>
+
+      If you want to create columns to indicate missing variables, enter the value to be considered as missing:
+
+      {{  form.miss_val  }}
+
+      <br><br>
+
+      Which columns do you want to create indicator columns for? Please separate with a semi-colon:
+
+      {{  form.indic_cols  }}
+
+      <br><br>
+
+      Are you using the unflattened CSV files?
+
+      {% for subfield in form.flatten_cols %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+      {% endfor %}
+
+      <br><br>
+
+      Do you want to save these columns in a separate file?
+
+      {% for subfield in form.make_list %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+      {% endfor %}
+
+      <br><br>
+
+      Which columns should be used to group the flatten columns? Separate each column with a ';'
+
+      {{  form.group_cols  }}
+
+      <br><br>
+
+      {{  form.execute  }}
+    </div>
+  </div>
+</form>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <center>
+  <ul class=flashes style="list-style-type:none">
+    {% for message in messages %}
+    <li> {{ message }}</li>
+    {% endfor %}
+  </ul>
+</center>
+  {% endif %}
+{% endwith %}
+</body>
+</html>

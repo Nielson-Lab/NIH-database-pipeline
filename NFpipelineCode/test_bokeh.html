@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.4.min.css"
+    rel="stylesheet" type="text/css">
+
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.4.min.js"></script>
+
+</head>
+<body>
+<H1>Histogram</H1>
+
+<form action="/" method = "POST|GET" name="files">
+  <select name="file_name">
+    {% for file in file_names %}
+
+      {% if file == current_file %}
+
+        <option selected value="{{ file }}">{{ file }}</option>
+      {% else %}
+        <option value="{{ file }}">{{ file }}</option>
+      {% endif %}
+
+    {% endfor %}
+  </select>
+<input type="submit" name = "file_submit" value="Submit">
+
+</form>
+
+<br>
+
+<form action="/" method="GET" name="features">
+  <select name="feature_name">
+	   {% for feature in feature_names %}
+		   {% if feature == current_feature_name %}
+			    <option selected value="{{ feature }}">{{ feature }}</option>
+		   {% else %}
+			    <option value="{{ feature }}">{{ feature }}</option>
+		   {% endif %}
+	   {% endfor %}
+   </select>
+   <input type="submit" name="feature_submit" value="Submit">
+</form>
+
+
+{{ script|safe }}
+{{ div|safe }}
+
+</body>
+</html>

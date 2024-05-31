@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- This repository was developed with funding from the National Institute of Mental Health (NIMH),
+grant # 1R01MH116156 awarded to Dr. Jessica L. Nielson, PhD at the University of Minnesota.
+©2024 Regents of the University of Minnesota. All rights reserved.
+
+This repository is open source and available under Attribution-NonCommercial-NoDerivatives (CC BY-NC-SA):
+(https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) -->
+<html>
+  <head>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='styles/StyleSheet.css')}}" type="text/css">
+  </head>
+  <style>
+    body {
+      background-color:var(--color-3);
+      color: black;
+    }
+
+  </style>
+<body>
+  <H1> NDA Data Dictionaries </H1>
+    <form action="http://localhost:5271">
+      <input type="submit" value="Home">
+    </form>
+<br>
+<form method="POST">
+
+
+  <div class="inside">
+    You have the option to select all the data dictionaries in NDA or only the ones that correspond to the data you're interested in. We <b>STRONGLY</b> recommended that unless you're interested in the entire NDA database, that you scrape only the data dictionaries that you're using. We also suggest scraping the data dictionaries before choosing your data to give you an idea what is in each data dictionary.</p>
+  </div>
+  <div style="text-align: center;">
+    <div style="display: inline-block; text-align: left; ">
+      <br><br>
+      Get the data dictionary for a file in the Inputs folder:
+      <br><br>
+
+        {{  form.execute_some  }}
+
+      <br><br><br>
+
+      Click on the button below to scrape <b>all</b> the NDA data dictionaries.
+      <br><br>
+
+        {{  form.execute_all  }}
+    </div>
+  </div>
+</form>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+
+  <ul class=flashes style="list-style-type:none">
+    {% for message in messages %}
+    <li> {{ message }}</li>
+    {% endfor %}
+  </ul>
+
+  {% endif %}
+{% endwith %}
+
+</body>
+</html>

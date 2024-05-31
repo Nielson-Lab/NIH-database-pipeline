@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- This repository was developed with funding from the National Institute of Mental Health (NIMH),
+grant # 1R01MH116156 awarded to Dr. Jessica L. Nielson, PhD at the University of Minnesota.
+©2024 Regents of the University of Minnesota. All rights reserved.
+
+This repository is open source and available under Attribution-NonCommercial-NoDerivatives (CC BY-NC-SA):
+(https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) -->
+<html>
+  <head>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='styles/StyleSheet.css')}}" type="text/css">
+  </head>
+  <style>
+    body {
+      background-color:var(--color-3);
+      color: black;
+    }
+  </style>
+<body>
+
+
+<H1> Preprocess NDA Datasets </H1>
+<form action="http://localhost:5271">
+  <input type="submit" value="Home">
+</form>
+<br>
+
+<form action="" method="POST">
+  <div style="text-align: center;">
+    <div style="display: inline-block; text-align: left;">
+      Do you want to remove empty columns?
+
+      {% for subfield in form.drop_na_cols %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+      {% endfor %}
+
+
+      <br><br>
+
+      Do you want to drop unnecessarily added columns ("collection_title", "promoted_subjectkey")?
+
+      {% for subfield in form.remove %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+      {% endfor %}
+
+      <br><br>
+
+      Please list additional columns you want to remove from the dataset. Separate with a semi-colon:
+
+      {{  form.drop_cols  }}
+
+      <br><br>
+
+      Do you want to rename the columns to match FITBIR column names?
+      {% for subfield in form.change_cols %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+      {% endfor %}
+
+      <br><br>
+
+      Do you want to scale the columns so that the values match the scale in FITBIR?
+      {% for subfield in form.scale_cols %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label }}</td>
+        </tr>
+      {% endfor %}
+
+      <br><br>
+
+      If you want to create columns to indicate missing variables, enter the value to be considered as missing:
+
+      {{  form.miss_val  }}
+      <br><br>
+      Which columns do you want to create indicator columns for? Separate with a semi-colon:
+
+      {{  form.indic_cols  }}
+
+      <br><br>
+
+      {{  form.execute  }}
+    </div>
+  </div>
+</form>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <center>
+  <ul class=flashes style="list-style-type:none">
+    {% for message in messages %}
+    <li> {{ message }}</li>
+    {% endfor %}
+  </ul>
+</center>
+  {% endif %}
+{% endwith %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+
+<form method="POST">
+<center>
+  Select which data archive your data comes from.
+
+  {% for subfield in form.archive %}
+    <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+    </tr>
+  {% endfor %}
+
+</center>
+<br>
+<center>
+  {{  form.execute  }}
+</center>
+
+</html>

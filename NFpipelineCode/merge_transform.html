@@ -1,0 +1,94 @@
+ <!DOCTYPE html>
+ <!-- This repository was developed with funding from the National Institute of Mental Health (NIMH),
+grant # 1R01MH116156 awarded to Dr. Jessica L. Nielson, PhD at the University of Minnesota.
+©2024 Regents of the University of Minnesota. All rights reserved.
+
+This repository is open source and available under Attribution-NonCommercial-NoDerivatives (CC BY-NC-SA):
+(https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) -->
+<html>
+  <head>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='styles/StyleSheet.css')}}" type="text/css">
+  </head>
+  <style>
+    body {
+      background-color:var(--color-3);
+      color: black;
+    }
+  </style>
+<body>
+  <H1> Merge & Transform </H1/>
+  <form action="http://localhost:5271">
+    <input  type="submit" value="Return Home">
+  </form>
+  <br>
+  <form action="" method="POST">
+    <div style="text-align: center;">
+      <div style="display: inline-block; text-align: left;">
+
+
+        Are you merging based on values in columns (choose column) or are you stacking the datasets (choose row)?
+        {% for subfield in form.binding %}
+          <tr>
+            <td>{{ subfield  }}</td>
+            <td>{{  subfield.label  }}</td>
+          </tr>
+        {% endfor %}
+        <br><br>
+
+        Enter the name of the column that contains the GUIDs:  {{ form.id_col  }}
+
+        <br><br>
+
+        Enter the name of the column that contains the time points (if applicable):  {{  form.date_col  }}
+        <br><br>
+
+        Enter the columns you want to exclude from the conversion, separated by a semi-colon (';').  <b>These should not inlcude the GUID column or the time point column.</b> <br>
+        For example, enter age;gender;marriage_status: {{  form.savecols  }}
+
+        <br><br>
+
+        Choose the function you want to use to aggregate your data: <br>       {{  form.aggfunc  }}
+
+        <br><br>
+
+        Enter the interval between time points.
+        If the columns is a list of dates, enter the time interval in days (e.g. 30 days for a time interval of 1 month): {{  form.time_interval  }}
+
+        <br><br>
+
+        Do you want to use the values in the time column as your new column names?
+        (Ex: values of '30', '90', '180' become "Col1_Day30", "Col1_Day90", etc):
+
+        {% for subfield in form.int_indc %}
+          <tr>
+              <td>{{ subfield }}</td>
+              <td>{{ subfield.label }}</td>
+          </tr>
+        {% endfor %}
+
+        <br><br>
+        Enter how you want the time points denoted (i.e. enter M if you want variables to end in M0, M6, M12, etc):
+
+        {{  form.prefix  }}
+        <br><br>
+        Enter the name to call the merged file:  {{  form.savename  }}
+        <br><br>
+        {{  form.execute  }}
+
+      </form>
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+
+        <ul class=flashes style="list-style-type:none">
+          {% for message in messages %}
+          <li> {{ message }}</li>
+          {% endfor %}
+        </ul>
+
+        {% endif %}
+      {% endwith %}
+    </div>
+  </div>
+</body>
+</html>

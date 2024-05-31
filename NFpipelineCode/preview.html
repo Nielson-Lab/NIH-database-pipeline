@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- This repository was developed with funding from the National Institute of Mental Health (NIMH),
+grant # 1R01MH116156 awarded to Dr. Jessica L. Nielson, PhD at the University of Minnesota.
+©2024 Regents of the University of Minnesota. All rights reserved.
+
+This repository is open source and available under Attribution-NonCommercial-NoDerivatives (CC BY-NC-SA):
+(https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) -->
+<html>
+<head>
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.4.min.css"
+    rel="stylesheet" type="text/css">
+
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.3.4.min.js"></script>
+
+</head>
+
+<body>
+<H1>Data Exploration using Histograms</H1>
+
+<br>
+<br>
+<!--
+<p>Does this dataset have metadata in the first row?</p>
+<input type="radio" name="database" value="yes">Yes<br>
+<input type="radio" name="database" value="no">No<br>
+<input type="submit">
+<br>
+<br>
+-->
+<form action="http://localhost:5271">
+  <input type="submit" value="Home">
+</form>
+<br>
+<br>
+<center>
+<form action="/preview/preview_data" method = "POST|GET">
+  <select name="file_name">
+    {% for file in file_names %}
+
+      {% if file == current_file %}
+
+        <option selected value="{{ file }}">{{ file }}</option>
+      {% else %}
+        <option value="{{ file }}">{{ file }}</option>
+      {% endif %}
+
+    {% endfor %}
+  </select>
+
+  <input type="submit" name = "file_submit" value="Submit">
+</form>
+
+  <br>
+
+<form action="/preview/preview_data" method="GET">
+  <select name="feature_name">
+
+  	{% for feature in feature_names %}
+
+  		{% if feature == current_feature %}
+
+  			<option selected value="{{ feature }}">{{ feature }}</option>
+  		{% else %}
+  			<option value="{{ feature }}">{{ feature }}</option>
+  		{% endif %}
+  	{% endfor %}
+  </select>
+<input type='submit' name="feature_submit" value="Submit">
+</form>
+
+
+{{ script|safe }}
+{{ div|safe }}
+
+</body>
+</center>
+</html>
