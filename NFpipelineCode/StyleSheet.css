@@ -1,0 +1,58 @@
+/* This repository was developed with funding from the National Institute of Mental Health (NIMH),
+grant # 1R01MH116156 awarded to Dr. Jessica L. Nielson, PhD at the University of Minnesota.
+©2024 Regents of the University of Minnesota. All rights reserved.
+
+This repository is open source and available under Attribution-NonCommercial-NoDerivatives (CC BY-NC-SA):
+(https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en) */
+
+:root {
+  /* Orange-Blue palette
+  --color-1: #e8824f;
+  --color-2: #f2a870;
+  --color-3: #faf5e5;
+  --color-4: #3bb0ba; */
+  /* Red-Gold palette */
+  --color-1: #b21919;
+  --color-2: #eb6d18;
+  --color-3: #f7af25;
+  --color-4: #985210;
+  --color-5: #faf5e5;
+}
+body {
+  background-color: var(--color-1);
+  color: var(--color-5);
+  font-family: Lora;
+  /* font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"; */
+
+}
+input[type=submit] {
+  appearance: none;
+  background-color: var(--color-5);
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #2b2b2b;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.inside {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  white-space: wrap;
+}
