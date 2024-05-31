@@ -1,6 +1,11 @@
 # NFpipeline - DEVELOPERS ONLY
 This is the source code for the NFP (NDA-FITBIR pipeline) application.
 
+This repository was developed with funding from the National Institute of Mental Health (NIMH), grant # 1R01MH116156 awarded to Dr. Jessica L. Nielson, PhD at the University of Minnesota. ©2024 Regents of the University of Minnesota. All rights reserved.
+
+This repository is open source and available under Attribution-NonCommercial-NoDerivatives (CC BY-NC-SA):(https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)
+
+
 ### Requirements
 ---
 Python 3.8 or later (Python 2 will be deprecated starting January 1st, 2020), python-pip, virtualenv
