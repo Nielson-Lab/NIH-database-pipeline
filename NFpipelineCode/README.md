@@ -1,11 +1,6 @@
 # NFpipeline - DEVELOPERS ONLY
 This is the source code for the NFP (NDA-FITBIR pipeline) application.
 
-This repository was developed with funding from the National Institute of Mental Health (NIMH), grant # 1R01MH116156 awarded to Dr. Jessica L. Nielson, PhD at the University of Minnesota. ©2024 Regents of the University of Minnesota. All rights reserved.
-
-This repository is open source and available under Attribution-NonCommercial-NoDerivatives (CC BY-NC-SA):(https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en)
-
-
 ### Requirements
 ---
 Python 3.8 or later (Python 2 will be deprecated starting January 1st, 2020), python-pip, virtualenv
@@ -44,7 +39,7 @@ If you need to update the alignment database, use the data file `"alignment_tabl
 python alignment.py
 ```
 
-Once the new "alignment_first_element.db" is created, transfer it to the "database" directory in "app". If the subdirectory "database" does not exist in "app", create it and then move the database there; Pyinstaller will look for the database in that directory.
+Once the new "alignment_first_element.db" is created, transfer it (creating if you have to) to the "database" directory in "app". If the subdirectory "database" does not exist in "app", create it and then move the database there; Pyinstaller will look for the database in that directory.
 
 The "waitress" package was used in the past to serve the application. I switched to "gevent" because it can handle larger applications better. The file to serve the application is `run_gevent.py`.
 
